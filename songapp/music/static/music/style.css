@@ -1,0 +1,53 @@
+body{
+    background: #e4f0da;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-family: 'Satisfy', cursive;
+}
+
+.navbar-custom { 
+    background-color: lightgreen; 
+} 
+  
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text { 
+    color: green; 
+}
+.container {
+    display: flex;
+    justify-content: center;
+  }
+  .center {
+    width: 800px;
+  }
+.txt1 {
+    font-family: 'Raleway-SemiBold';
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+  
+  .txt2 {
+    font-family: 'Raleway-Regular';
+    font-size: 13px;
+    color: #999999;
+    line-height: 1.4;
+  }
+  
+  .txt3 {
+    font-family: 'Raleway-Regular';
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+  }
+  .image-txt-container {
+    display:flex;
+    align-items:center;
+    flex-direction: row;
+}

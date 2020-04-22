@@ -1,0 +1,61 @@
+{% extends 'music/base.html' %}
+{% block body %}
+<div class="container-fluid songs-container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <ul class="nav nav-pills" style="margin-bottom: 10px;">
+                    
+                
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-12">
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Song Title</th>
+                                <th>Artist</th>
+                                <th>Album</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for song in all_songs %}
+                                <tr>
+                                    <td>{{ song.song_title }}</td>
+                                    <td>{{ song.album.artist }}</td>
+                                    <td>
+                                        <a href="{% url 'music:detail' song.album.id %}">
+                                            <img src="{{ song.album.album_logo.url }}" class="img-responsive" style="width: 20px; float: left; margin-right: 10px;" />
+                                        </a>
+                                        <a href="{% url 'music:detail' song.album.id %}">{{ song.album.album_title }}</a>
+                                    </td>
+                                    <td>
+                                            <div class="dropdown">
+                                                    <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Select
+                                                    <span class="caret"></span></button>
+                                                    <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'music:cmfccs' song.pk %}">MFCCS</a></li>
+                                                      <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'music:cspectrogram' song.pk %}">Spectrogram</a></li>
+                                                    </ul>
+                                                  </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
